@@ -29,10 +29,11 @@ window.addEventListener('click', (event) => {
 
 const images = [winterImage1, winterImage2, winterImage3, winterImage4];
 
-const slideFrame = document.querySelector("#slides");
-carousel.addImagesToContainer(images, slideFrame);
+const slidesContainer = document.querySelector("#slides");
+carousel.addImagesToContainer(images, slidesContainer);
 
 const nextBtn = document.querySelector(".next");
-nextBtn.addEventListener("click", () => carousel.advanceSlide(slideFrame))
+nextBtn.addEventListener("click", () => carousel.goToNextSlide(slidesContainer));
 
-// carousel.advanceSlide(slideFrame)
+const previousBtn = document.querySelector(".previous");
+previousBtn.addEventListener("click", () => carousel.goToPreviousSlide(slidesContainer));

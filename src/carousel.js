@@ -8,16 +8,24 @@ const addImagesToContainer = (imagesToAdd, container) => {
     });
 }
 
-const advanceSlide = (slideFrame, max= null) => {
-    const body = document.querySelector("body");
-    const computedStyle = getComputedStyle(body);
-    const pixelToAdvance = parseInt(computedStyle.getPropertyValue("--carousel-height"));
-    // need to use parseInt because the variable is returned as a string
-
-    const computedStyleSlideFrame = getComputedStyle(slideFrame);
-    const currentBottom = parseInt(computedStyleSlideFrame.bottom);
-
-    slideFrame.style.bottom = (currentBottom + pixelToAdvance) + "px"
+const goToNextSlide = (slidesContainer, max= null) => {
+    const currentBottom = parseInt(getComputedStyle(slidesContainer).bottom);
+    slidesContainer.style.bottom = (currentBottom + pixelToSlide()) + "px";
+    console.log(slidesContainer.style.bottom);
 }
 
-export default {addImagesToContainer, advanceSlide};
+const goToPreviousSlide = (slidesContainer) => {
+    const currentBottom = parseInt(getComputedStyle(slidesContainer).bottom);
+    slidesContainer.style.bottom = Math.min(0, currentBottom - pixelToSlide()) + "px"; 
+    console.log(slidesContainer.style.bottom);
+}
+
+const pixelToSlide = () => {
+    const body = document.querySelector("body");
+    const computedStyle = getComputedStyle(body);
+    const pixelToSlide = parseInt(computedStyle.getPropertyValue("--carousel-height"));
+    // need to use parseInt because the variable is returned as a string
+    return pixelToSlide;
+}
+
+export default {addImagesToContainer, goToNextSlide, goToPreviousSlide};
