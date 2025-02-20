@@ -1,4 +1,11 @@
 import "./styles.css";
+import carousel from "./carousel.js"
+
+import winterImage1 from "./images/winter1.jpg";
+import winterImage2 from "./images/winter2.jpg";
+import winterImage3 from "./images/winter3.jpg";
+import winterImage4 from "./images/winter4.jpg";
+
 
 console.log("Hello World!")
 
@@ -19,3 +26,9 @@ window.addEventListener('click', (event) => {
         }
     }
 });
+
+
+const images = [winterImage1, winterImage2, winterImage3, winterImage4];
+
+const container = document.querySelector("#slides");
+carousel.addImages(images, container);
