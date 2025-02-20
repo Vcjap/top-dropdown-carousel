@@ -8,15 +8,17 @@ const addImagesToContainer = (imagesToAdd, container) => {
     });
 }
 
-const goToNextSlide = (slidesContainer, max= null) => {
+const goToNextSlide = (slidesContainer) => {
+    const maxPosition = parseInt(getComputedStyle(slidesContainer).height) - pixelToSlide();
+    
     const currentBottom = parseInt(getComputedStyle(slidesContainer).bottom);
-    slidesContainer.style.bottom = (currentBottom + pixelToSlide()) + "px";
+    slidesContainer.style.bottom = Math.min(maxPosition, currentBottom + pixelToSlide()) + "px";
     console.log(slidesContainer.style.bottom);
 }
 
 const goToPreviousSlide = (slidesContainer) => {
     const currentBottom = parseInt(getComputedStyle(slidesContainer).bottom);
-    slidesContainer.style.bottom = Math.min(0, currentBottom - pixelToSlide()) + "px"; 
+    slidesContainer.style.bottom = Math.max(0, currentBottom - pixelToSlide()) + "px"; 
     console.log(slidesContainer.style.bottom);
 }
 
