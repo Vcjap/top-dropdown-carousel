@@ -31,4 +31,4 @@ window.addEventListener('click', (event) => {
 const images = [winterImage1, winterImage2, winterImage3, winterImage4];
 
 const container = document.querySelector("#slides");
-carousel.addImages(images, container);
+carousel.addImagesToContainer(images, container);

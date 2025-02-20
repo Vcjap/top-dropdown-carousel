@@ -1,5 +1,5 @@
 
-const addImages = (imagesToAdd, container) => {
+const addImagesToContainer = (imagesToAdd, container) => {
 
     imagesToAdd.forEach((imageToAdd) => {
         const newImage = document.createElement("img");
@@ -8,4 +8,4 @@ const addImages = (imagesToAdd, container) => {
     });
 }
 
-export default {addImages};
+export default {addImagesToContainer};

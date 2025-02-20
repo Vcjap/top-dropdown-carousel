@@ -1,5 +1,7 @@
 body {
     background-color: aquamarine;
+    --carousel-height: 200px;
+    --carousel-width: 300px;
 }
 
 .dropdown {
@@ -30,4 +32,39 @@ body {
 /* This class will be toggled with JavaScript */
 .show {
     display: block;
+}
+
+#main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#slides {
+    display: flexbox;
+}
+
+img {
+    height: var(--carousel-height);
+    width: var(--carousel-width);
+}
+
+#frame {
+    /* padding: 20px; */
+    height: var(--carousel-height);
+    width: var(--carousel-width);
+    overflow: hidden;
+}
+
+#controls {
+    display: flex;
+    width: var(--carousel-width);
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#controls button {
+    width: 100px;
 }
