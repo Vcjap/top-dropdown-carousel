@@ -44,11 +44,13 @@ body {
 
 #slides {
     display: flexbox;
+    position: relative;
+    bottom: 0px;
 }
 
 img {
-    height: var(--carousel-height);
-    width: var(--carousel-width);
+    height: 100%;
+    width: 100%;
 }
 
 #frame {
