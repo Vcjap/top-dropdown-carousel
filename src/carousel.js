@@ -1,11 +1,11 @@
 
 const addImages = (imagesToAdd, container) => {
 
-    for (const imageToAdd in imagesToAdd) {
+    imagesToAdd.forEach((imageToAdd) => {
         const newImage = document.createElement("img");
         newImage.src = imageToAdd;
         container.append(newImage);
-    }
+    });
 }
 
 export default {addImages};
