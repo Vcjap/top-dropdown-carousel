@@ -48,3 +48,7 @@ nextBtn.addEventListener("click", () => carousel.goToNextSlide(slidesContainer))
 
 const previousBtn = document.querySelector(".previous");
 previousBtn.addEventListener("click", () => carousel.goToPreviousSlide(slidesContainer));
+
+setInterval(() => {
+    carousel.goToNextSlide(slidesContainer);
+}, 5000);
