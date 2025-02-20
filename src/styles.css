@@ -54,7 +54,6 @@ img {
 }
 
 #frame {
-    /* padding: 20px; */
     height: var(--carousel-height);
     width: var(--carousel-width);
     overflow: hidden;
@@ -69,4 +68,24 @@ img {
 
 #controls button {
     width: 100px;
+}
+
+/* New styles for dot navigation */
+#dot-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
 }

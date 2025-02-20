@@ -32,6 +32,17 @@ const images = [winterImage1, winterImage2, winterImage3, winterImage4];
 const slidesContainer = document.querySelector("#slides");
 carousel.addImagesToContainer(images, slidesContainer);
 
+const dotContainer = document.querySelector("#dot-navigation");
+carousel.createDotNavigation(images.length, dotContainer);
+
+// Add click handlers for dots
+dotContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('dot')) {
+        const index = parseInt(e.target.dataset.index);
+        carousel.goToSlide(slidesContainer, index, images.length);
+    }
+});
+
 const nextBtn = document.querySelector(".next");
 nextBtn.addEventListener("click", () => carousel.goToNextSlide(slidesContainer));
 
